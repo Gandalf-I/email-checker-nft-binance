@@ -1,0 +1,23 @@
+{
+  "name": "email-checker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "tsc && node dist/app.js"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "cookie-parser": "~1.4.4",
+    "csv-parse": "^5.3.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.5.0",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
