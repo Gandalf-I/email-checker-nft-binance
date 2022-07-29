@@ -1,7 +1,7 @@
 import { connect } from 'imap-simple';
 import { parse } from 'csv-parse';
 import { createReadStream } from 'fs';
-import { TIME_TO_LETTERS } from './config';
+import { AUTH_TIMEOUT, HOST, PORT, TIME_TO_LETTERS, TLS } from './config';
 
 class Account {
     user: string;
@@ -14,10 +14,10 @@ class Account {
 }
 
 class EmailConfig extends Account {
-    host = 'mail1.tuthost.com';
-    port = 993;
-    tls = true;
-    authTimeout = 3000;
+    host = HOST;
+    port = PORT;
+    tls = TLS;
+    authTimeout = AUTH_TIMEOUT;
 
     constructor({user, password}: Partial<EmailConfig>) {
         super({user, password})
