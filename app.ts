@@ -1,6 +1,7 @@
 import { connect } from 'imap-simple';
 import { parse } from 'csv-parse';
 import { createReadStream } from 'fs';
+import { TIME_TO_LETTERS } from './config';
 
 class Account {
     user: string;
@@ -55,7 +56,7 @@ async function getAccountsData(): Promise<Account[]> {
 
         for (let message of messages) {
             if (
-                +message.attributes.date >= +new Date() - 1000 * 60 * 60 * 24 &&
+                +message.attributes.date >= +new Date() - TIME_TO_LETTERS &&
                 message.parts[0].body.subject[0] === "[Binance NFT] NFT distribution has ended"
             ) {
                 console.log(data.user, data.password)
